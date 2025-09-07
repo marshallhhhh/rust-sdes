@@ -1,0 +1,89 @@
+/* Page background: deep charcoal to pitch a serious, high-contrast vibe */
+body {
+  background: #121212; /* darker than before */
+  font-family: 'Geist Mono', 'Segoe UI', 'Inter', sans-serif;
+  color: #e0e0e0;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Main heading: clean, compact, and bold */
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 2.5rem 1rem 1rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+/* Input fields: refined, darker with accent focus ring */
+input[type="text"] {
+  background: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 0.6em 0.9em;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  width: 220px;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+  border-color: #4cff00;
+  outline: none;
+}
+
+/* Buttons: flat, clean color, similar but simplified gradient */
+button {
+  background-color: rgba(76, 255, 0, 0.1);
+  color: #4cff00;
+  border: 2px solid #4cff00;
+  border-radius: 6px;
+  padding: 0.6em 1.4em;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.5em 0.5em 1em 0;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    background-color: rgba(76, 255, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Result card: monospaced output container with subdued background */
+#result {
+  background: #1e1e1e;
+  color: #4cff00;
+  border-radius: 6px;
+  padding: 0.8em 1.3em;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  min-width: 220px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Section headers: clear and understated */
+h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1.8rem 0 0.6rem;
+  letter-spacing: 0.01em;
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 600px) {
+  h1 { font-size: 1.4rem; }
+  h2 { font-size: 1rem; }
+  input[type="text"], #result {
+    width: 90vw;
+    min-width: unset;
+  }
+}

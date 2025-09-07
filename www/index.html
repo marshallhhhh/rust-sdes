@@ -1,0 +1,26 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SDES WASM Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&display=swap">
+</head>
+<body>
+    <h1>SDES Encrypt/Decrypt</h1>
+    <label for="key">10-bit Key:</label>
+    <input type="text" id="key" maxlength="10" value="0101111001"><br>
+
+    <label for="plaintext">8-bit Plaintext:</label>
+    <input type="text" id="plaintext" maxlength="8" value="10011010"><br>
+
+    <button id="encryptBtn">Encrypt</button><br>
+    <button id="decryptBtn">Decrypt</button><br>
+
+    <label for="ciphertext">8-bit Ciphertext:</label>
+    <input type="text" id="ciphertext" maxlength="8" value=""><br>
+    
+    <script type="module" src="index.js"></script>
+</body>
+</html>

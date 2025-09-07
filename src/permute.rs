@@ -12,7 +12,7 @@ pub fn permute(input: u16, table: &[usize], input_bits: usize, output_bits: usiz
     for (i, &pos) in table.iter().enumerate() {
         let mask: u16 = 1 << (input_bits - 1 - pos);
         if (mask & input) != 0 {
-            output |= (1 << output_bits - 1 - i);
+            output |= 1 << output_bits - 1 - i;
         }
     }
 
@@ -22,6 +22,11 @@ pub fn permute(input: u16, table: &[usize], input_bits: usize, output_bits: usiz
 pub fn perm_4(input: u16) -> u16 {
     let p4_table: [usize; 4] = [1,3,2,0];
     return permute(input, &p4_table, 4, 4);
+}
+
+pub fn perm_expansion4(input: u16) -> u16 {
+    let expansion_table: [usize; 8] = [3, 0, 1, 2, 1, 2, 3, 0];
+    return permute(input, &expansion_table, 4, 8);
 }
 
 pub fn perm_initial(input: u16) -> u16 {

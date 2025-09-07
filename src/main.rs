@@ -1,7 +1,4 @@
-use sdes::sdes::encrypt;
-use sdes::sdes::decrypt;
-
-
+use sdes::sdes::{encrypt, decrypt};
 fn main() {
     let plaintext: u16 = 0b00011000;
     let masterkey: u16 = 0b0101111001;

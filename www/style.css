@@ -1,13 +1,15 @@
 /* Page background: deep charcoal to pitch a serious, high-contrast vibe */
 body {
-  background: #121212; /* darker than before */
+  background: #121212;
   font-family: 'Geist Mono', 'Segoe UI', 'Inter', sans-serif;
   color: #e0e0e0;
   margin: 0;
-  min-height: 100vh;
+  min-height:70vh;
+  height: 70vh; /* Add this */
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* Add this */
 }
 
 /* Main heading: clean, compact, and bold */
@@ -39,9 +41,9 @@ input[type="text"]:focus {
 
 /* Buttons: flat, clean color, similar but simplified gradient */
 button {
-  background-color: rgba(76, 255, 0, 0.1);
-  color: #4cff00;
-  border: 2px solid #4cff00;
+  background-color: rgba(81, 162, 255, 0.1);
+  color: #51a2ff;
+  border: 2px solid #51a2ff;
   border-radius: 6px;
   padding: 0.6em 1.4em;
   font-size: 1rem;
@@ -53,7 +55,7 @@ button {
 }
 
 button:hover {
-    background-color: rgba(76, 255, 0, 0.3);
+    background-color: rgba(81, 162, 255, 0.4);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -86,4 +88,23 @@ h2 {
     width: 90vw;
     min-width: unset;
   }
+}
+
+.toast {
+    position: fixed;
+    top:30%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #230a00;
+    color: #ff4c00;
+    border: 2px solid #ff4c00;
+    border-radius: 6px;
+    padding: 0.6em 1.4em;
+    font-size: 1rem;
+    font-weight: 600;
+    z-index: 99999;
+    pointer-events: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: opacity 0.3s;
+    opacity: 1;
 }

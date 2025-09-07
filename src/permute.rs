@@ -30,23 +30,11 @@ pub fn perm_expansion4(input: u16) -> u16 {
 }
 
 pub fn perm_initial(input: u16) -> u16 {
-    let p10_table: [usize; 8] = [1, 5, 2, 0, 3, 7, 4, 6];
-    return permute(input, &p10_table, 8, 8);
+    let table: [usize; 8] = [1, 5, 2, 0, 3, 7, 4, 6];
+    return permute(input, &table, 8, 8);
 }
 
-/*
-pub fn perm_8(input: u16) -> u16 {
-    let p8_table: [usize; 8] = [5,2,6,3,7,4,9,8];
-    return permute(input, &p8_table);
+pub fn perm_inverse(input: u16) -> u16 {
+    let table: [usize; 8] = [3, 0, 2, 4, 6, 1, 7, 5];
+    return permute(input, &table, 8, 8);
 }
-
-pub fn perm_10(input: u16) -> u16 {
-    let p10_table: [usize; 10] = [2,4,1,6,3,9,0,8,7,5];
-    return permute(input, &p10_table);
-}
-
-pub fn perm_initial(input: u16) -> u16 {
-    let p10_table: [usize; 8] = [1, 5, 2, 0, 3, 7, 4, 6];
-    return permute(input, &p10_table);
-}
-     */

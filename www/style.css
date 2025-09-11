@@ -1,87 +1,144 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-  background: #121212;
-  font-family: 'Geist Mono', 'Fira Mono', 'Menlo', 'Consolas', 'Monaco', 'Liberation Mono', 'Courier New', monospace;
-  color: #e0e0e0;
-  margin: 0;
-  min-height:70vh;
-  height: 70vh; /* Add this */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /* Add this */
+    background: #121212;
+    font-family: 'Geist Mono', 'Fira Mono', 'Menlo', 'Consolas', 'Monaco', 'Liberation Mono', 'Courier New', monospace;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 1rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 2.5rem 1rem 1rem;
-  letter-spacing: 0.02em;
-  text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 1.5rem 0;
+    letter-spacing: 0.02em;
+    text-align: center;
 }
 
-h2 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: 1.8rem 0 0.6rem;
-  letter-spacing: 0.01em;
+.input-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-row {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+    .container {
+        max-width: 98vw;
+        padding: 0.5em;
+    }
+    h1 {
+        font-size: 1.2rem;
+        margin: 0.7em 0;
+    }
+    .input-group, .input-row {
+        flex-direction: column !important;
+        gap: 0.5em;
+        width: 100%;
+        margin-bottom: 1em;
+    }
+    label, input[type="text"], button, .result {
+        font-size: 1em;
+        width: 100%;
+        min-width: unset;
+        padding: 1em 0.5em;
+        margin: 0;
+    }
+    .result {
+        min-height: 2.2em;
+        padding: 1em 0.5em;
+    }
+    .toast {
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1em;
+        max-width: 95vw;
+        padding: 1em 0.5em;
+    }
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
 }
 
 input[type="text"] {
-  background: #1e1e1e;
-  font-family: 'Geist Mono', 'Fira Mono', monospace;
-  color: #e0e0e0;
-  border: 1px solid #555;
-  border-radius: 6px;
-  padding: 0.5em;
-  font-size: 1.1em;
-  transition: border-color 0.2s;
+    background: #1e1e1e;
+    font-family: 'Geist Mono', 'Fira Mono', monospace;
+    color: #e0e0e0;
+    border: 1px solid #555;
+    border-radius: 6px;
+    padding: 0.75em;
+    font-size: 1em;
+    transition: border-color 0.2s;
+    width: 100%;
+    letter-spacing: 0.3em;
 }
 
 input[type="text"]:focus {
-  border-color: #51a2ff;
-  outline: none;
+    border-color: #51a2ff;
+    outline: none;
 }
 
 .result {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  background: #232323;
-  color: #51a2ff;
-  border-radius: 6px;
-  padding: 0.5em 1em; /* Same padding as input */
-  font-size: 1.1em; /* Same font size */
-  font-family: 'Geist Mono', 'Fira Mono', monospace;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.10);
-  border: 1px solid #333;
-  width: 100%;
-  white-space: nowrap;
-  height: auto; /* Remove fixed height, let content determine it */
-  min-height: 1em; /* Ensure minimum height */
-  line-height: normal; /* Match input's line height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #232323;
+    color: #51a2ff;
+    border-radius: 6px;
+    padding: 0.75em;
+    font-size: 1em;
+    font-family: 'Geist Mono', 'Fira Mono', monospace;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.10);
+    border: 1px solid #333;
+    width: 100%;
+    min-height: 2.8em;
+    line-height: normal;
+    letter-spacing: 0.3em;
 }
 
 .result:empty::before {
-  content: "\200B"; /* Zero-width space to maintain height */
-  visibility: hidden;
+    content: "\200B";
+    visibility: hidden;
 }
 
-
 button {
-  background-color: rgba(81, 162, 255, 0.1);
-  color: #51a2ff;
-  border: 2px solid #51a2ff;
-  font-family: 'Geist Mono', 'Fira Mono', monospace;
-  border-radius: 6px;
-  padding: 0.5em;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 1rem;
-  cursor: pointer;
-  width: 100%;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: background 0.2s, box-shadow 0.2s;
+    background-color: rgba(81, 162, 255, 0.1);
+    color: #51a2ff;
+    border: 2px solid #51a2ff;
+    font-family: 'Geist Mono', 'Fira Mono', monospace;
+    border-radius: 6px;
+    padding: 0.75em;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.2s, box-shadow 0.2s;
 }
 
 button:hover {
@@ -89,19 +146,9 @@ button:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-.grid > div {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-}
-
 .toast {
     position: fixed;
-    top:30%;
+    top: 30%;
     left: 50%;
     transform: translateX(-50%);
     background-color: #230a00;
@@ -116,4 +163,6 @@ button:hover {
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     transition: opacity 0.3s;
     opacity: 0.95;
+    max-width: 90%;
+    text-align: center;
 }

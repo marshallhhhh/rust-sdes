@@ -8,28 +8,34 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&display=swap">
 </head>
 <body>
-    <h1>SDES Encrypt/Decrypt</h1>
-    <div class="grid">
-        <div><label for="key">10-bit Key:</label></div>
-        <div></div>
-        <div></div>
-        <div><input type="text" id="key" maxlength="10" value="0101111001"></div>
-        <div><button id="randomKeyBtn">Random</button></div>
-        <div></div>
-
-        <div><label for="plaintext">8-bit Plaintext:</label></div>
-        <div></div>
-        <div></div>
-        <div><input type="text" id="plaintext" maxlength="8" value="10011010"></div>
-        <div><button id="encryptBtn">Encrypt</button></div>
-        <div><span id="encryptResult" class="result"></span></div>
-
-        <div><label for="ciphertext">8-bit Ciphertext:</label></div>
-        <div></div>
-        <div></div>
-        <div><input type="text" id="ciphertext" maxlength="8" value=""></div>
-        <div><button id="decryptBtn">Decrypt</button></div>
-        <div><span id="decryptResult" class="result"></span></div>
+    <div class="container">
+        <h1>SDES Encrypt/Decrypt</h1>
+        
+        <div class="input-group">
+            <label for="key">10-bit Key:</label>
+            <div class="input-row">
+                <input type="text" id="key" maxlength="10" value="0101111001">
+                <button id="randomKeyBtn">Random Key</button>
+            </div>
+        </div>
+        
+        <div class="input-group">
+            <label for="plaintext">8-bit Plaintext:</label>
+            <div class="input-row">
+                <input type="text" id="plaintext" maxlength="8" value="10011010">
+                <button id="encryptBtn">Encrypt</button>
+                <span id="encryptResult" class="result"></span>
+            </div>
+        </div>
+        
+        <div class="input-group">
+            <label for="ciphertext">8-bit Ciphertext:</label>
+            <div class="input-row">
+                <input type="text" id="ciphertext" maxlength="8" value="">
+                <button id="decryptBtn">Decrypt</button>
+                <span id="decryptResult" class="result"></span>
+            </div>
+        </div>
     </div>
     <script type="module" src="index.js"></script>
 </body>

@@ -8,8 +8,8 @@ function showToast(msg) {
     const heading = document.createElement('strong');
     heading.textContent = 'Error';
     heading.style.display = 'block';
-    heading.style.fontSize = '1.3em';
-    heading.style.marginBottom = '0.2em';
+    heading.style.fontSize = '1.5em';
+    //heading.style.marginBottom = '0.2em';
 
     toast.appendChild(heading);
     toast.appendChild(document.createTextNode(msg));

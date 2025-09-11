@@ -76,6 +76,7 @@ h1 {
         font-size: 1em;
         max-width: 95vw;
         padding: 1em 0.5em;
+        width: 80%;
     }
 }
 
@@ -91,10 +92,11 @@ input[type="text"] {
     border: 1px solid #555;
     border-radius: 6px;
     padding: 0.75em;
-    font-size: 1em;
+    font-size: 1.2em;
     transition: border-color 0.2s;
     width: 100%;
     letter-spacing: 0.3em;
+    text-align: center;
 }
 
 input[type="text"]:focus {
@@ -110,7 +112,7 @@ input[type="text"]:focus {
     color: #51a2ff;
     border-radius: 6px;
     padding: 0.75em;
-    font-size: 1em;
+    font-size: 1.2em;
     font-family: 'Geist Mono', 'Fira Mono', monospace;
     text-align: center;
     box-shadow: 0 2px 6px rgba(0,0,0,0.10);
@@ -133,7 +135,7 @@ button {
     font-family: 'Geist Mono', 'Fira Mono', monospace;
     border-radius: 6px;
     padding: 0.75em;
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: 600;
     cursor: pointer;
     width: 100%;
@@ -156,7 +158,7 @@ button:hover {
     border: 2px solid #ff4c00;
     border-radius: 6px;
     padding: 0.6em 1.4em;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     z-index: 99999;
     pointer-events: none;
@@ -164,5 +166,5 @@ button:hover {
     transition: opacity 0.3s;
     opacity: 0.95;
     max-width: 90%;
-    text-align: center;
+    text-align: left;
 }

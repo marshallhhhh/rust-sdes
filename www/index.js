@@ -9,7 +9,7 @@ function showToast(msg) {
     heading.textContent = 'Error';
     heading.style.display = 'block';
     heading.style.fontSize = '1.5em';
-    //heading.style.marginBottom = '0.2em';
+    heading.style.marginBottom = '0.2em';
 
     toast.appendChild(heading);
     toast.appendChild(document.createTextNode(msg));

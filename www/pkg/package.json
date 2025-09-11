@@ -1,0 +1,15 @@
+{
+  "name": "sdes",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "sdes_bg.wasm",
+    "sdes.js",
+    "sdes.d.ts"
+  ],
+  "main": "sdes.js",
+  "types": "sdes.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

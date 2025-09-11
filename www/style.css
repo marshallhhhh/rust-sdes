@@ -169,3 +169,18 @@ button:hover {
     max-width: 90%;
     text-align: left;
 }
+
+footer {
+  align-self: flex-end;
+  text-align: right;
+}
+
+a {
+  text-decoration: none;
+  color: #51a2ff;
+  font-size: 1.1em;
+}
+
+footer i {
+  font-size: 25px;
+}

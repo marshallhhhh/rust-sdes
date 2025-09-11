@@ -9,18 +9,28 @@
 </head>
 <body>
     <h1>SDES Encrypt/Decrypt</h1>
-    <label for="key">10-bit Key:</label>
-    <input type="text" id="key" maxlength="10" value="0101111001"><br>
+    <div class="grid">
+        <div><label for="key">10-bit Key:</label></div>
+        <div></div>
+        <div></div>
+        <div><input type="text" id="key" maxlength="10" value="0101111001"></div>
+        <div><button id="randomKeyBtn">Random</button></div>
+        <div></div>
 
-    <label for="plaintext">8-bit Plaintext:</label>
-    <input type="text" id="plaintext" maxlength="8" value="10011010"><br>
+        <div><label for="plaintext">8-bit Plaintext:</label></div>
+        <div></div>
+        <div></div>
+        <div><input type="text" id="plaintext" maxlength="8" value="10011010"></div>
+        <div><button id="encryptBtn">Encrypt</button></div>
+        <div><span id="encryptResult" class="result"></span></div>
 
-    <button id="encryptBtn">Encrypt</button><br>
-    <button id="decryptBtn">Decrypt</button><br>
-
-    <label for="ciphertext">8-bit Ciphertext:</label>
-    <input type="text" id="ciphertext" maxlength="8" value=""><br>
-    
+        <div><label for="ciphertext">8-bit Ciphertext:</label></div>
+        <div></div>
+        <div></div>
+        <div><input type="text" id="ciphertext" maxlength="8" value=""></div>
+        <div><button id="decryptBtn">Decrypt</button></div>
+        <div><span id="decryptResult" class="result"></span></div>
+    </div>
     <script type="module" src="index.js"></script>
 </body>
 </html>

@@ -22,23 +22,38 @@ function showToast(msg) {
     }, 2000);
 }
 
+function isValidBinary(str, length) {
+    return str.length === length && /^[01]+$/.test(str);
+}
+
+function randomBits(length) {
+    let bits = '';
+    for (let i = 0; i < length; i++) {
+        bits += Math.random() < 0.5 ? '0' : '1';
+    }
+    return bits;
+}
+
 async function run() {
     await init();
 
-    function isValidBinary(str, length) {
-        return str.length === length && /^[01]+$/.test(str);
-    }
+    document.getElementById('randomKeyBtn').onclick = () => {
+        document.getElementById('key').value = randomBits(10);
+    };
 
     document.getElementById('encryptBtn').onclick = () => {
         const pt = document.getElementById('plaintext').value;
         const key = document.getElementById('key').value;
+        const resultBox = document.getElementById('encryptResult');
 
         if (!isValidBinary(pt, 8)) {
             showToast("Plaintext must be 8 bits (0 or 1).");
+            resultBox.textContent = '';
             return;
         }
         if (!isValidBinary(key, 10)) {
             showToast("Key must be 10 bits (0 or 1).");
+            resultBox.textContent = '';
             return;
         }
 
@@ -47,19 +62,22 @@ async function run() {
 
         const ct = encrypt(ptNum, keyNum);
         const ctStr = ct.toString(2).padStart(8, '0');
-        document.getElementById('ciphertext').value = ctStr;
+        resultBox.textContent = ctStr;
     };
 
     document.getElementById('decryptBtn').onclick = () => {
         const ct = document.getElementById('ciphertext').value;
         const key = document.getElementById('key').value;
+        const resultBox = document.getElementById('decryptResult');
 
         if (!isValidBinary(ct, 8)) {
             showToast("Ciphertext must be 8 bits (0 or 1).");
+            resultBox.textContent = '';
             return;
         }
         if (!isValidBinary(key, 10)) {
             showToast("Key must be 10 bits (0 or 1).");
+            resultBox.textContent = '';
             return;
         }
 
@@ -68,7 +86,7 @@ async function run() {
 
         const pt = decrypt(ctNum, keyNum);
         const ptStr = pt.toString(2).padStart(8, '0');
-        document.getElementById('plaintext').value = ptStr;
+        resultBox.textContent = ptStr;
     };
 }
 

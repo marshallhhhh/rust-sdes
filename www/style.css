@@ -1,7 +1,6 @@
-/* Page background: deep charcoal to pitch a serious, high-contrast vibe */
 body {
   background: #121212;
-  font-family: 'Geist Mono', 'Segoe UI', 'Inter', sans-serif;
+  font-family: 'Geist Mono', 'Fira Mono', 'Menlo', 'Consolas', 'Monaco', 'Liberation Mono', 'Courier New', monospace;
   color: #e0e0e0;
   margin: 0;
   min-height:70vh;
@@ -12,7 +11,6 @@ body {
   justify-content: center; /* Add this */
 }
 
-/* Main heading: clean, compact, and bold */
 h1 {
   font-size: 2rem;
   font-weight: 700;
@@ -21,35 +19,67 @@ h1 {
   text-align: center;
 }
 
-/* Input fields: refined, darker with accent focus ring */
+h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1.8rem 0 0.6rem;
+  letter-spacing: 0.01em;
+}
+
 input[type="text"] {
   background: #1e1e1e;
+  font-family: 'Geist Mono', 'Fira Mono', monospace;
   color: #e0e0e0;
   border: 1px solid #555;
   border-radius: 6px;
-  padding: 0.6em 0.9em;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  width: 220px;
+  padding: 0.5em;
+  font-size: 1.1em;
   transition: border-color 0.2s;
 }
 
 input[type="text"]:focus {
-  border-color: #4cff00;
+  border-color: #51a2ff;
   outline: none;
 }
 
-/* Buttons: flat, clean color, similar but simplified gradient */
+.result {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: #232323;
+  color: #51a2ff;
+  border-radius: 6px;
+  padding: 0.5em 1em; /* Same padding as input */
+  font-size: 1.1em; /* Same font size */
+  font-family: 'Geist Mono', 'Fira Mono', monospace;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.10);
+  border: 1px solid #333;
+  width: 100%;
+  white-space: nowrap;
+  height: auto; /* Remove fixed height, let content determine it */
+  min-height: 1em; /* Ensure minimum height */
+  line-height: normal; /* Match input's line height */
+}
+
+.result:empty::before {
+  content: "\200B"; /* Zero-width space to maintain height */
+  visibility: hidden;
+}
+
+
 button {
   background-color: rgba(81, 162, 255, 0.1);
   color: #51a2ff;
   border: 2px solid #51a2ff;
+  font-family: 'Geist Mono', 'Fira Mono', monospace;
   border-radius: 6px;
-  padding: 0.6em 1.4em;
-  font-size: 1rem;
+  padding: 0.5em;
+  font-size: 1.1rem;
   font-weight: 600;
-  margin: 0.5em 0.5em 1em 0;
+  margin: 1rem;
   cursor: pointer;
+  width: 100%;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: background 0.2s, box-shadow 0.2s;
 }
@@ -59,35 +89,14 @@ button:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Result card: monospaced output container with subdued background */
-#result {
-  background: #1e1e1e;
-  color: #4cff00;
-  border-radius: 6px;
-  padding: 0.8em 1.3em;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  min-width: 220px;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
-
-/* Section headers: clear and understated */
-h2 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: 1.8rem 0 0.6rem;
-  letter-spacing: 0.01em;
-}
-
-/* Responsive adjustments for mobile screens */
-@media (max-width: 600px) {
-  h1 { font-size: 1.4rem; }
-  h2 { font-size: 1rem; }
-  input[type="text"], #result {
-    width: 90vw;
-    min-width: unset;
-  }
+.grid > div {
+  display: flex;
+  align-items: center;
+  justify-content: left;
 }
 
 .toast {
@@ -106,5 +115,5 @@ h2 {
     pointer-events: none;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     transition: opacity 0.3s;
-    opacity: 1;
+    opacity: 0.95;
 }
